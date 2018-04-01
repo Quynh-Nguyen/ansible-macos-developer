@@ -34,8 +34,3 @@ echo "Ansible Playbook Progress"
 echo "========================="
 
 ansible-playbook -i ./hosts playbook.yml --verbose
-
-
-
-
-ansible-galaxy install -r requirements.yml
