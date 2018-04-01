@@ -2,8 +2,6 @@
 - name: applications install
   include: homebrew.yml
 
-- name: getting downloads
-
 - name: start install homebrew applications
   homebrew:
     name: "{{ item }}"
