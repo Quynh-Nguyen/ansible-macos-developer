@@ -30,7 +30,7 @@ echo "========================"
 echo "Clone Ansible Repository"
 echo "========================"
 
-installdir = "/tmp/summon-$RANDOM"
+installdir="/tmp/summon-$RANDOM"
 mkdir $installdir
 
 git clone https://github.com/Quynh-Nguyen/ansible-macos-developer.git $installdir
