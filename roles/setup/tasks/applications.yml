@@ -1,0 +1,17 @@
+---
+- name: applications install
+  include: homebrew.yml
+
+- name: getting downloads
+
+- name: start install homebrew applications
+  homebrew:
+    name: {{item}}
+    state: latest
+    with_items: "{{applications}}"
+
+- name: start install homebrew cask applications
+  homebrew_cask:
+    name: {{item}}
+    state: installed
+    with_items: {{cask_applications}}

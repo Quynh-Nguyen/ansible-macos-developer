@@ -1,0 +1,15 @@
+---
+- name: setting up my dotfiles
+  git:
+    repo: https://github.com/deamonza/dotfiles.git
+    dest: /tmp/dotfiles/
+
+- name: zsh dot file
+  copy:
+    src: /tmp/dotfiles/dot.zshrc
+    dest: "{{general.local_home}}/.zshrc"
+
+- name: clean up /tmp/dotfiles
+  file:
+    path: /tmp/dotfiles
+    state: absent
