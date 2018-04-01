@@ -5,7 +5,7 @@ echo "WARNING : This will remove homebrew and all applications installed through
 echo -n "are you sure you want to do that? [y/n] : "
 read confirmation
 
-if [ $confirmation == "y" ]; then
+if [ "$confirmation" == "y" ]; then
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall)"
     exit 0
 else
@@ -15,7 +15,7 @@ fi
 
 }
 
-if [ $1 == "uninstall" ]; then
+if [ "$1" == "uninstall" ]; then
     uninstall
 fi
 
@@ -40,7 +40,7 @@ if [ ! -d $installdir ]; then
     exit 1
 else
     cd $installdir
-    
+
     echo "========================="
     echo "Ansible Playbook Progress"
     echo "========================="
