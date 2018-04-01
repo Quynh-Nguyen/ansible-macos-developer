@@ -26,11 +26,24 @@ echo "====================="
 sudo easy_install pip
 sudo pip install ansible
 
+echo "========================"
+echo "Clone Ansible Repository"
+echo "========================"
+
 installdir = "/tmp/summon-$RANDOM"
 mkdir $installdir
 
-echo "========================="
-echo "Ansible Playbook Progress"
-echo "========================="
+git clone https://github.com/Quynh-Nguyen/ansible-macos-developer.git $installdir
+if [ ! -d $installdir ]; then
+    echo "Failed to find Ansible MacOS for Developer."
+    echo "git cloned failed"
+    exit 1
+else
+    cd $installdir
+    
+    echo "========================="
+    echo "Ansible Playbook Progress"
+    echo "========================="
 
-ansible-playbook -i ./hosts playbook.yml --verbose
+    ansible-playbook -i ./hosts playbook.yml --verbose
+fi

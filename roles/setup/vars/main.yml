@@ -1,0 +1,23 @@
+---
+#List of applications will be install
+general:
+  local_home: {{ lookup('env', 'HOME') }}
+
+#Homebrew applications
+applications:
+  - git
+  - tree
+  - curl
+  - wget
+  - zsh
+  - go
+  - vim
+
+#Homebrew cask applications
+cask_applications:
+  - slack
+  - iterm2
+  - docker
+
+downloads:
+  
