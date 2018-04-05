@@ -5,11 +5,22 @@
 - name: Start install homebrew applications
   homebrew:
     name: "{{ item.name }}"
+    install_options: "{{ item.install_options | default('') }}"
     state: latest
   with_items: "{{ brew_base_packages }}"
+  tags:
+    - base
+    - brew
 
 - name: Start install homebrew cask applications
-  homebrew_cask:
-    name: "{{ item }}"
-    state: installed
+  command: "brew cask install {{ item.install_options | default('')}} {{ item.name }}"
+  # TODO: Figure our "Error no cask hydra" issue
+  # homebrew_cask:
+  #   name: "{{ item.name }}"
+  #   state: installed
   with_items: "{{ brew_cask_applications }}"
+  ignore_errors: True
+  tags:
+    - base
+    - brew
+    - brew-cask
