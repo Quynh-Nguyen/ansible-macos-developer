@@ -5,6 +5,16 @@ general:
 
 #Homebrew applications
 brew_base_packages:
+  - name: autoconf
+  - name: automake
+  - name: bash
+  - name: bash-completion
+  - name: cmake
+  - name: fn
+  - name: fontconfig
+  - name: python
+  - name: redis
+  - name: sqlite
   - name: git
   - name: tree
   - name: curl
@@ -18,3 +28,11 @@ brew_cask_applications:
   - name: slack
   - name: iterm2
   - name: docker
+  - name: atom
+  - name: firefox
+  - name: google-chrome
+  - name: sublime-text
+
+brew_taps:
+  - name: caskroom/versions
+  - name: homebrew/science
