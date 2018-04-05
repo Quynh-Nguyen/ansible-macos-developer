@@ -1,15 +1,15 @@
 ---
-- name: applications install
+- name: Applications install
   include: homebrew.yml
 
-- name: start install homebrew applications
+- name: Start install homebrew applications
   homebrew:
-    name: "{{ item }}"
+    name: "{{ item.name }}"
     state: latest
-    with_items: "{{ applications }}"
+    with_items: "{{ brew_base_packages }}"
 
-- name: start install homebrew cask applications
+- name: Start install homebrew cask applications
   homebrew_cask:
     name: "{{ item }}"
     state: installed
-    with_items: "{{ cask_applications }}"
+    with_items: "{{ brew_cask_applications }}"

@@ -4,20 +4,17 @@ general:
   local_home: "{{ lookup('env', 'HOME') }}"
 
 #Homebrew applications
-applications:
-  - git
-  - tree
-  - curl
-  - wget
-  - zsh
-  - go
-  - vim
+brew_base_packages:
+  - name: git
+  - name: tree
+  - name: curl
+  - name: wget
+  - name: zsh
+  - name: go
+  - name: vim
 
 #Homebrew cask applications
-cask_applications:
-  - slack
-  - iterm2
-  - docker
-
-downloads:
-  
+brew_cask_applications:
+  - name: slack
+  - name: iterm2
+  - name: docker
