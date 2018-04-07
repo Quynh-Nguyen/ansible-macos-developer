@@ -1,8 +1,8 @@
 ---
-- name: Applications install
+- name: Install and update Homebrew, Homebrew Cask
   include: homebrew.yml
 
-- name: Start install homebrew applications
+- name: Start install base applications
   homebrew:
     name: "{{ item.name }}"
     install_options: "{{ item.install_options | default('') }}"
