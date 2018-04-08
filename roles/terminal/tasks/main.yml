@@ -4,7 +4,7 @@
     repo: https://github.com/robbyrussell/oh-my-zsh.git
     dest: "{{general.local_home}}/.oh-my-zsh"
 
-- name: Getting theme for oh-my-zsh: powerlevel9k
+- name: Getting theme for oh-my-zsh powerlevel9k
   git:
     repo: https://github.com/bhilburn/powerlevel9k.git
     dest: "{{general.local_home}}/.oh-my-zsh_powerlevel9k_theme"
