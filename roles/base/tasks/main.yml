@@ -1,5 +1,2 @@
 - name: Install Applications
   include: applications.yml
-
-- name: dotfiles
-  include: dotfiles.yml
