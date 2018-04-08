@@ -2,3 +2,4 @@
 - hosts: mac-local
   roles:
     - base
+    - terminal
