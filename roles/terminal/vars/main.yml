@@ -1,0 +1,6 @@
+---
+general:
+  local_home: "{{ lookup('env', 'HOME') }}"
+
+ohmyzsh_packages:
+  - name: fonts-powerline

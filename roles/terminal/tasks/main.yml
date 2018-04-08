@@ -1,0 +1,29 @@
+---
+- name: Setting up zsh with oh-my-zsh
+  git:
+    repo: https://github.com/robbyrussell/oh-my-zsh.git
+    dest: "{{general.local_home}}/.oh-my-zsh"
+
+- name: Getting theme for oh-my-zsh: powerlevel9k
+  git:
+    repo: https://github.com/bhilburn/powerlevel9k.git
+    dest: "{{general.local_home}}/.oh-my-zsh_powerlevel9k_theme"
+
+- name: Sym linking oh-my-zsh theme
+  file:
+    src: "{{general.local_home}}/.oh-my-zsh_powerlevel9k_theme/powerlevel9k.zsh-theme"
+    dest: "{{general.local_home}}/.oh-my-zsh/themes/powerlevel9k.zsh-theme"
+    state: link
+
+- name: Setting font for oh-my-zsh theme
+  homebrew:
+    name: "{{ item.name }}"
+    install_options: "{{ item.install_options | default('') }}"
+    state: latest
+  with_items: "{{ ohmyzsh_packages }}"
+  tags:
+    - terminal
+    - brew
+
+- name: Setting font for oh-my-zsh theme
+  shell: https://raw.githubusercontent.com/powerline/fonts/master/install.sh
