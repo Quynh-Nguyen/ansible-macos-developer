@@ -10,9 +10,9 @@
     state: latest
     update_homebrew: yes
 
-- name: tap homebrew caskroom/cask
+- name: tap homebrew homebrew/cask
   homebrew_tap:
-    tap: "caskroom/cask"
+    tap: "homebrew/cask"
 
 - name: tap homebrew neovim/homebrew-neovim
   homebrew_tap:
