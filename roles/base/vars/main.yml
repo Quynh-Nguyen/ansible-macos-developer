@@ -24,7 +24,7 @@ brew_base_packages:
   - name: vim
   - name: nginx
   - name: php
-  - name: php@7.1
+  - name: php@7.4
   - name: mysql
   - name: composer
   - name: nvm
