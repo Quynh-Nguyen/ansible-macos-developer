@@ -23,8 +23,13 @@ echo "====================="
 echo "Setting up your MacOS"
 echo "====================="
 
-sudo easy_install pip3
-sudo pip3 install ansible
+brew install python3
+python3 -m pip install ansible
+
+echo "=============="
+echo "Verify Ansible"
+echo "=============="
+ansible --version
 
 echo "========================"
 echo "Clone Ansible Repository"
