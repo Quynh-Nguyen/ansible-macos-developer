@@ -1,7 +1,4 @@
 ---
-- name: Install and update Homebrew, Homebrew Cask
-  include: homebrew.yml
-
 - name: Start install base applications
   homebrew:
     name: "{{ item.name }}"
