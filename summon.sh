@@ -23,8 +23,8 @@ echo "====================="
 echo "Setting up your MacOS"
 echo "====================="
 
-sudo easy_install pip
-sudo pip install ansible
+sudo easy_install pip3
+sudo pip3 install ansible
 
 echo "========================"
 echo "Clone Ansible Repository"
