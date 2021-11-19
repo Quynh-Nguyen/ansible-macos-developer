@@ -23,8 +23,8 @@ echo "====================="
 echo "Setting up your MacOS"
 echo "====================="
 
-brew install python3
 python3 -m pip install ansible
+export PATH="/Users/quynhnguyen/Library/Python/3.8/bin:$PATH"
 
 echo "=============="
 echo "Verify Ansible"
